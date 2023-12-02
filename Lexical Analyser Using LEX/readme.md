@@ -1,4 +1,4 @@
-#RUN LEX PROGRAM
+# RUN LEX PROGRAM
 ---
 - In terminal type "flex filename.l"
 - After generating lex.yy.c file type "gcc lex.yy.c"
