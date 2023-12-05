@@ -12,7 +12,7 @@ relop [">"|"<"|"<="|">="|"=="|"!="]
 {keywords}+ {printf("%s is a keyword\n",yytext);}
 {relop}+ {printf("%s is a relop\n",yytext);}
 {letter}+{letter}*{digit}* {printf("%s is an identifier\n",yytext);}
-(" "|"/n") {printf("%s is a special character\n",yytext);}
+. {printf("%s is a special character\n",yytext);}
 %%
 
 void main()
