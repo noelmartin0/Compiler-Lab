@@ -3,7 +3,7 @@
 void main()
 {
     char stack[20],ip[20],opt[10][10][1],ter[10];
-    int i,j,k,n,top=0,col,row,flag;
+    int i,j,k,n,top=0,row,col,flag;
     printf("\nEnter the number of terminals: ");
     scanf("%d",&n);
     printf("\nEnter the terminals: ");
@@ -42,16 +42,16 @@ void main()
         for(k=0;k<n;k++)
         {
             if(stack[top]==ter[k])
-                col=k;
-            if(ip[i]==ter[k])
                 row=k;
+            if(ip[i]==ter[k])
+                col=k;
         }
         if(stack[top] == '$' && ip[i] == '$')
         {
             printf("String is accepted");
             break;
         }
-        else if(opt[col][row][0] == '<' || opt[col][row][0] == '=')
+        else if(opt[row][col][0] == '<' || opt[row][col][0] == '=')
         {
             flag = 0;
             for(int x = 0; ter[x] != '\0'; x++)
@@ -64,14 +64,14 @@ void main()
                 printf("String is not accepted");
                 break;
             }
-            stack[++top] = opt[col][row][0];
+            stack[++top] = opt[row][col][0];
             stack[++top] = ip[i];
             printf("Shift %c",ip[i]);
             i++;
         }
         else
         {
-            if(opt[col][row][0] == '>')
+            if(opt[row][col][0] == '>')
             {
                 while(stack[top] != '<')
                     --top;
