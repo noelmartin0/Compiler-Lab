@@ -7,7 +7,7 @@ struct expression{
 void main()
 {
     int k=0,flag=0;
-    char input[20],res[20],temp='x';
+    char input[20],temp='x';
     printf("\nEnter the expression: ");
     scanf("%s",input);
     for(int i=2; input[i] != '\0'; i++)
