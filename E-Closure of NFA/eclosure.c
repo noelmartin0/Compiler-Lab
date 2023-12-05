@@ -39,14 +39,7 @@ void main()
     {
         src=states[i];
         printf("q%d = { ",src);
-        for(int j=0; j<n; j++)
-        {
-            if(nfa[j].input == -1 && nfa[j].source == src)
-            {
-                printf("q%d ",nfa[j].dest);
-                findTrans(nfa[j].dest);
-            }
-        }
+        findTrans(src);
         printf("q%d }\n",src);
     }
 }
