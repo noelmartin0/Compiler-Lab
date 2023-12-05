@@ -5,7 +5,7 @@ extern int yylval;
 %}
 %%
 [0-9]+ {yylval = atoi(yytext); return NUMBER;}
-[a-zA-Z][_a-zA-Z]* {return ID;}
+[_a-zA-Z]* {return ID;}
 \n {return 0;}
 . {printf("\nInvalid Identifier"); exit(0);}
 %%
