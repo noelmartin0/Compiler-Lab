@@ -54,7 +54,7 @@ void main()
         else if(opt[row][col][0] == '<' || opt[row][col][0] == '=')
         {
             flag = 0;
-            for(int x = 0; ter[x] != '\0'; x++)
+            for(int x = 0; x < n; x++)
             {
                 if(ip[i] == ter[x])
                     flag = 1;
@@ -98,4 +98,3 @@ void main()
     }
     printf("\n");
 }
-
