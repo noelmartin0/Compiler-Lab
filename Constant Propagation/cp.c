@@ -18,7 +18,7 @@ void findConstant(char exp[20])
 }
 void main()
 {
-    int n,flag=0,count=1,op1=0,op2=0;
+    int n,flag=0,count=1,op1=-1,op2=-1;
     char exp[20][20];
     printf("\nEnter the number of expression: \n");
     scanf("%d",&n);
@@ -33,7 +33,7 @@ void main()
     }
     for(int i = 0; i < n; i++)
     {
-        if(!(exp[i][0] == '='))
+        if(exp[i][0] != '=')
         {
             printf("%c ",exp[i][0]);
             char operator = exp[i][0];
@@ -61,7 +61,7 @@ void main()
                 }
                 if(flag == 0)
                     printf("%c ",exp[i][j]);
-                if(exp[i][j+1] == '\0' && (op1 != 0 && op2 != 0))
+                if(exp[i][j+1] == '\0' && (op1 != -1 && op2 != -1))
                 {
                     switch(operator)
                     {
@@ -69,29 +69,29 @@ void main()
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
-                                  op1=0;
-                                  op2=0;
+                                  op1=-1;
+                                  op2=-1;
                                   break;
                         case '-': op1=op1-op2;
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
-                                  op1=0;
-                                  op2=0;
+                                  op1=-1;
+                                  op2=-1;
                                   break;
                         case '*': op1=op1*op2;
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
-                                  op1=0;
-                                  op2=0;
+                                  op1=-1;
+                                  op2=-1;
                                   break;
                         case '/': op1=op1/op2;
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
-                                  op1=0;
-                                  op2=0;
+                                  op1=-1;
+                                  op2=-1;
                                   break;
                     }
                 }
