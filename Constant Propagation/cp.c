@@ -18,7 +18,7 @@ void findConstant(char exp[20])
 }
 void main()
 {
-    int n,flag=0,count=1,op1,op2;
+    int n,flag=0,count=1,op1=0,op2=0;
     char exp[20][20];
     printf("\nEnter the number of expression: \n");
     scanf("%d",&n);
@@ -61,7 +61,7 @@ void main()
                 }
                 if(flag == 0)
                     printf("%c ",exp[i][j]);
-                if(exp[i][j+1] == '\0')
+                if(exp[i][j+1] == '\0' && (op1 != 0 && op2 != 0))
                 {
                     switch(operator)
                     {
@@ -69,21 +69,29 @@ void main()
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
+                                  op1=0;
+                                  op2=0;
                                   break;
                         case '-': op1=op1-op2;
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
+                                  op1=0;
+                                  op2=0;
                                   break;
                         case '*': op1=op1*op2;
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
+                                  op1=0;
+                                  op2=0;
                                   break;
                         case '/': op1=op1/op2;
                                   con[z].var = exp[i][j];
                                   con[z].value = op1;
                                   z++;
+                                  op1=0;
+                                  op2=0;
                                   break;
                     }
                 }
