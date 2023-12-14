@@ -1,0 +1,8 @@
+void keyword
+int keyword
+float keyword
+char keyword
+double keyword
+long keyword
+if keyword
+else keyword
