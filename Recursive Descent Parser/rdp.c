@@ -11,7 +11,7 @@ int main()
     printf("\nEnter a string: ");
     scanf("%s",a);
     E();
-    if(a[z] == 0 && flag == 0)
+    if(a[z] == '\0' && flag == 0)
         printf("\nValid");
     else
         printf("\nInvalid");
