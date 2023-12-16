@@ -95,6 +95,8 @@ void main()
                                   break;
                     }
                 }
+                else
+                    count = 1;
             }
             printf("\n");
         }
